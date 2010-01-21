@@ -78,7 +78,7 @@ var wrap = function(self, key, method){
 
 var implement = function(key, value, retain){
 	
-	var mutator = Class.Mutators[key];
+	var mutator = Class.Mutators.hasOwnProperty(key) && Class.Mutators[key];
 	
 	if (mutator){
 		value = mutator.call(this, value);
